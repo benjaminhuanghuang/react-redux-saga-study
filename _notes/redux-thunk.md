@@ -79,3 +79,4 @@ export default ()=>(dispatch)=>{
 ## Reference
 -[聊一聊 redux 异步流之 redux-saga](https://www.jianshu.com/p/e84493c7af35)
 -[](https://juejin.im/post/5bfbaeea5188254e2a0435c9)
+-[redux中间件redux-thunk简单使用图文教程](https://github.com/frontend9/fe9-library/issues/214)
