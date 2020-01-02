@@ -6,10 +6,13 @@ import * as serviceWorker from './serviceWorker';
 
 //
 import { Provider } from 'react-redux'  //新引入
-import { createStore } from 'redux'   //新引入
+import {createStore, applyMiddleware} from 'redux' //新引入, thunk is a middleware need applyMiddleware
+import thunk from 'redux-thunk'
 import rootReducer from './rootReducer.js'  //新引入
 
-const store = createStore(rootReducer)
+//注释 const store = createStore(rootReducer)
+const store = createStore(rootReducer,applyMiddleware(thunk))   //引入 thunk
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

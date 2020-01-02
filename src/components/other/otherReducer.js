@@ -1,5 +1,5 @@
 const initState = {
-  title:'我是otherReducer数据'
+  title:'!!我是otherReducer数据'
 }
 
 export default (state=initState,action) => {

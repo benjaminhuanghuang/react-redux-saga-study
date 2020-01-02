@@ -3,7 +3,7 @@
 
 ## Reference
 -[Understanding Generator Functions & Using Redux Saga](https://www.youtube.com/watch?v=o3A9EvMspig)
-
+-[bindActionCreators作用](https://www.jianshu.com/p/b8d0e2340db1)
 
 ## Setup
 ```
