@@ -9,5 +9,5 @@
 ```
   npx create-react-app .
 
-  npm i redux react-redux
+  npm i redux react-redux react-saga -S
 ```

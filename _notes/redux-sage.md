@@ -4,7 +4,7 @@ redux saga is a library the aim to hadle side effects (data fetching) in React r
 
 generators are used to make the async code easier to read, write and test
 
-Boilerplate
+## Boilerplate
 ```
 import {creatStore, applyMiddleware} from 'redux'
 import createSagaMiddleware from 'resux-saga'
@@ -29,5 +29,7 @@ If it matches the action they are told to handle, the assign ti to worker
 
 ## Testing
 
-
+## Reference
+-[聊一聊 redux 异步流之 redux-saga](https://www.jianshu.com/p/e84493c7af35)
 -[轻松学 Redux-Saga #1 课程简介与 Redux-Saga 介绍]()
+-[从redux-thunk到redux-saga实践] (https://github.com/Pines-Cheng/blog/issues/9)
