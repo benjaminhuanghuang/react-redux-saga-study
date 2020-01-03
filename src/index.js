@@ -11,11 +11,11 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import rootReducer from './reducers'
 // Saga
 import createSagaMiddleware from 'redux-saga'
-import {helloSaga} from './sagas'
+import { wathIncrementAsync } from './sagas'
 
 const saga = createSagaMiddleware()
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(saga)))
-saga.run(helloSaga)
+saga.run(wathIncrementAsync)   // Start saga
 
 ReactDOM.render(
   <Provider store={store}>
