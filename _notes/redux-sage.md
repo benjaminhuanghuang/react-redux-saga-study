@@ -4,6 +4,11 @@ redux saga is a library the aim to hadle side effects (data fetching) in React r
 
 generators are used to make the async code easier to read, write and test
 
+## Install
+```
+  npm i redux-saga
+```
+
 ## Boilerplate
 ```
 import {creatStore, applyMiddleware} from 'redux'

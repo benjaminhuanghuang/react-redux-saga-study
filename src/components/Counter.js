@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 //
 import {increment} from '../actions/counter'
 
+/*
+  Normal redux
+*/
 class Counter extends Component {
   render() {
     return (

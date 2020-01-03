@@ -6,12 +6,16 @@ import App from './App';
 // Redux
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 // 
 import rootReducer from './reducers'
+// Saga
+import createSagaMiddleware from 'redux-saga'
+import {helloSaga} from './sagas'
 
-const store = createStore(rootReducer, composeWithDevTools())   //引入 thunk and saga
+const saga = createSagaMiddleware()
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(saga)))
+saga.run(helloSaga)
 
 ReactDOM.render(
   <Provider store={store}>
