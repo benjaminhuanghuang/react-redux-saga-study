@@ -1,14 +1,14 @@
 
+## Redux and middleware
 Redux的核心概念其实很简单：将需要修改的state都存入到store里，dispatch一个action用来描述发生了什么，
 用reducers描述action如何改变state 。
 创建store的时候需要传入reducer，真正能改变store中数据的是store.dispatch 
 
 dispatch一个action之后，到达reducer之前，可以用middleware进行一些额外的操作。比如日志记录、创建崩溃报告、调用异步接口或者路由等等。
 
-
 middleware都是对store.dispatch()的增强
 
-## middleware 雏形
+- middleware 雏形
 要添加日志功能，把 Action 和 State 打印出来，可以对store.dispatch进行如下改造。
 ```
 let next = store.dispatch;    // the real dispatch function
@@ -78,5 +78,5 @@ export default ()=>(dispatch)=>{
 
 ## Reference
 -[聊一聊 redux 异步流之 redux-saga](https://www.jianshu.com/p/e84493c7af35)
--[](https://juejin.im/post/5bfbaeea5188254e2a0435c9)
+-[Redux中间件之redux-thunk使用详解](https://juejin.im/post/5bfbaeea5188254e2a0435c9)
 -[redux中间件redux-thunk简单使用图文教程](https://github.com/frontend9/fe9-library/issues/214)

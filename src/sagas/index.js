@@ -1,12 +1,13 @@
-import {takeLatest} from 'redux-saga/effects'
 
-import {INCREMENT_ASYNC, INCREMENT} from '../constants/counter'
+import { all } from 'redux-saga/effects'
+//
+import { fetchUsersWatcher } from './user'
+import { wathIncrementAsync } from './counter'
 
-function* incrementAsync(){
 
-}
-
-export function* wathIncrementAsync() {
-  
-  yield takeLatest(INCREMENT, incrementAsync)
+export function* rootSaga() {
+  yield all([
+    fetchUsersWatcher(),
+    wathIncrementAsync()
+  ])
 }
