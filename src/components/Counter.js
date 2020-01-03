@@ -3,15 +3,15 @@ import {connect} from 'react-redux';
 //
 import {increment, incrementAsync} from '../actions/counter'
 
-/*
-  Normal redux
-*/
 class Counter extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.props.increment}>{this.props.counter}</button>
-        <button onClick={this.props.incrementAsync}>{this.props.counter}</button>
+        <div>
+          <span>{this.props.counter}</span>
+        </div>
+        <button onClick={this.props.increment}>Increment</button>
+        <button onClick={this.props.incrementAsync}>Increment Async</button>
       </div>
     )
   }

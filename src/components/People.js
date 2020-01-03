@@ -5,7 +5,7 @@ class People extends Component {
   render() {
     return (
       <div>
-          <div className="Age-label">
+        <div className="Age-label">
           People age: <span>{this.props.people.age}</span>
         </div>
         <button onClick={this.props.onAgeUp}>Age UP</button>
