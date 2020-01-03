@@ -2,12 +2,10 @@ import React, { Component } from 'react'
 
 //引用connect
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-
 import './hello.css'
 
 //
-import helloAction from './helloAction.js'
+import { changeName } from './helloAction.js'
 
 
 class Hello extends Component {
@@ -24,9 +22,7 @@ class Hello extends Component {
     // this.setState({
     //   title:title
     // })
-
-    let { actions } = this.props
-    actions.changeName(title)
+    this.props.changeName(title)
   }
   render() {
     //此处打印this.props应该可以看到helloProp这个对象了，证明数据已经挂在到组件紫红
@@ -43,16 +39,16 @@ class Hello extends Component {
 }
 
 
-//mapStateToProps是connect一个参数， 作用到将store中的数据作为 props 绑定到组件上 
+//mapStateToProps是connect一个参数， 描述如何将store中的数据绑定到组件的props上 
 const mapStateToProps = (state, ownProps) => {
   return {
-    helloProp: state.helloReducer   //helloReducer是在rootReducer中的名
+    helloProp: state.hello //hello是在rootReducer中的名字
   }
 }
-//使用mapDispatchToProps绑定helloAction
+//Inject a prop called "changeName" into the component
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    actions: bindActionCreators(helloAction, dispatch)
+    changeName: (text) => dispatch(changeName(text))
   }
 }
 //通过connect高阶函数绑定数据

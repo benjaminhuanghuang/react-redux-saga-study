@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 //
-import helloAction from '../Hello/helloAction.js'
+import { changeName } from '../Hello/helloAction.js'
 
 
 class Other extends Component {
 
-  changeName() {
-    let { helloAction } = this.props;
+  changeHello = () => {
     let text = 'other' + (Math.random() * 100)
     // 操作helloReducer.js的数据
-    helloAction.changeName(text)
+    this.props.changeName(text)
   }
 
   render() {
@@ -21,7 +19,7 @@ class Other extends Component {
     return (
       <div>
         <h3>{otherProp.title}</h3>
-        <button className="btn" onClick={() => { this.changeName() }}>我是其他组件的按钮</button>
+        <button className="btn" onClick={this.changeHello}>我是其他组件的按钮</button>
       </div>
     )
   }
@@ -29,13 +27,15 @@ class Other extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    helloProp: state.helloReducer,
+    helloProp: state.hello,
     otherProp: state.otherReducer
   }
 }
+
+// Inject a prop called "changeName" into the component
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    helloAction: bindActionCreators(helloAction, dispatch)
+    changeName: (text) => dispatch(changeName(text))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Other)
