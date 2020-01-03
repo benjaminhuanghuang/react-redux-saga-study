@@ -31,6 +31,6 @@ If it matches the action they are told to handle, the assign ti to worker
 
 ## Reference
 -[聊一聊 redux 异步流之 redux-saga](https://www.jianshu.com/p/e84493c7af35)
--[轻松学 Redux-Saga #1 课程简介与 Redux-Saga 介绍]()
+-[轻松学 Redux-Saga #1 课程简介与 Redux-Saga 介绍](https://www.youtube.com/watch?v=JuX9aJhvO_s&t=26s)
 -[从redux-thunk到redux-saga实践] (https://github.com/Pines-Cheng/blog/issues/9)
 -[彻彻底底教会你使用Redux-saga(包含样例代码)](https://segmentfault.com/a/1190000015583055)
